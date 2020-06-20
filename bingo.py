@@ -105,9 +105,12 @@ async def main(message, delay):
     }
 
     exi = False
-   Start = input("Press Any key to begin") 
+    # Start = input("Press Any key to begin") 
     while exi != True:
-        
+
+        if message.content == (Starter_Benjisoft + "quit"):
+            await message.channel.send("yeet")
+
         output = ""
         if bool(Numbs) == False:
             break
@@ -138,7 +141,7 @@ async def on_ready():
 @client.event
 async def on_message(message):
     Starter_Benjisoft = "<:bingo:716730924955467846>"
-    Starter_UTCRLive = "<:bingo:id"
+    Starter_UTCRLive = "<:bingo:719483447600611421>"
     ## this is hard coded and will need to be changed for each server. 
     ## If there is a better way make a pull request
     if message.author == client.user:
