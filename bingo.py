@@ -11,7 +11,7 @@ client = discord.Client()
 
 load_dotenv() # to run this you need to get the dotenv lib and make a .env file (or load in your token the way you want to)
 TOKEN=os.getenv('DISCORD_TOKEN')
-async def main(message, delay):
+async def main(message, delay, starter):
     Numbs={ 
         1:[ "Kelly's Eye" ],
         2:[ "One little duck ","Me and you" ],
@@ -152,7 +152,7 @@ async def on_message(message):
 
         UnfilteredDelay = message.content
         delay = DelayMaker(Starter_Benjisoft, UnfilteredDelay)
-        await main(message, delay)
+        await main(message , delay , Starter_Benjisoft)
 
 
     if message.content.startswith( Starter_UTCRLive):
@@ -160,7 +160,7 @@ async def on_message(message):
 
         UnfilteredDelay = message.content
         delay = DelayMaker(Starter_UTCRLive, UnfilteredDelay)
-        await main(message, delay)
-        
+        await main(message, delay , Starter_UTCRLive)
+
 client.run(TOKEN)
 
